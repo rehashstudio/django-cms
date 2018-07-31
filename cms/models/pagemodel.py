@@ -68,7 +68,7 @@ class Page(with_metaclass(PageMetaClass, MPTTModel)):
     # Please use toggle_in_navigation() instead of affecting this property
     # directly so that the cms page cache can be invalidated as appropriate.
     #
-    in_navigation = models.BooleanField(_("in navigation"), default=True, db_index=True)
+    in_navigation = models.BooleanField(_("in navigation"), default=False, db_index=True)
     soft_root = models.BooleanField(_("soft root"), db_index=True, default=False,
                                     help_text=_("All ancestors will not be displayed in the navigation"))
     reverse_id = models.CharField(_("id"), max_length=40, db_index=True, blank=True, null=True, help_text=_(
